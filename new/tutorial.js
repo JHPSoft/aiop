@@ -64,3 +64,12 @@ $( "#move" ).click
 	$("#sidebar").css('left','101vw');
 	}
 );
+
+$( "#save" ).click
+(
+	function()
+	{
+	    alert($(window).width());
+	    alert($(window).height());
+	}
+);

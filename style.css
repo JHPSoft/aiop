@@ -8,10 +8,6 @@ body, #tutorial, #graypanel{
 	height : 100%;
 }
 
-iframe {
-	frameborder : 0;
-}
-
 
 .center{
 	display:block;
@@ -40,7 +36,7 @@ iframe {
 .items{
 	//border : 1px solid;
 	width : 100%;
-	height : 20vw;
+	height : 20vh ;
 	padding : 5px;
 }
 
@@ -52,20 +48,44 @@ iframe {
 	display : block;
 }
 
-.onArrange {
-	background-color : yellow;
+
+
+.widgets {
+	z-index : 2;
+  
+    position : absolute;
+	//background-color : yellow;
+	//border : 5px solid;
+/*
+	-moz-box-shadow:	0 5px 20px 0 #ccc;
+	-webkit-box-shadow: 0 5px 20px 0 #ccc;
+	box-shadow: 		0 5px 20px 0 #ccc;
+	*/
 }
 
 
+#resizeHandler{
+  
+  position : absolute;
+	z-index : 3;
+  width : 100px;
+  height : 100px;
+  background-color : rgba(127,127,127,0);
+  display : none;
+  transition: background 0.5s linear;
+
+}
+
 
 #sidebar {
-	z-index : 3;
+	z-index : 6;
 	position : fixed;
 	left : 101vw;
 	width : 33vw;
 	height : 100%;
 	transition: 0.5s;
 	overflow-y: scroll;
+	background-color : white;
 	-moz-box-shadow:		-1vw 0 1vw 0 #ccc;
 	-webkit-box-shadow: -1vw 0 1vw 0 #ccc;
 	box-shadow: 				-1vw 0 1vw 0 #ccc;
@@ -79,6 +99,15 @@ iframe {
 }
 
 
+#contents {
+    height : 100vh;
+}
+
+#menu {
+  position : absolute;
+  top : 0px;
+  transition : 0.4s;
+}
 
 #tutorial {
 	z-index : 10;
@@ -86,16 +115,16 @@ iframe {
 	top: 0;
 	overflow: hidden;
 	position: fixed;
-	background-color: rgba(255, 255, 255, 0); 
+	background-color: rgba(255, 255, 255, 0);
 }
 
 #graypanel {
-	z-index : 2;
+	z-index : 6;
 	left: 0;
 	top: 0;
 	overflow: hidden;
 	position: fixed;
-	background-color: rgba(175, 175, 175, 0.6); 
+	background-color: rgba(175, 175, 175, 0.6);
 }
 
 #new_logo {
