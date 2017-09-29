@@ -1,0 +1,206 @@
+﻿*{
+  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  font-family:'Lato';
+  
+}
+.container{
+  display:flex;
+}
+
+.timer{
+  cursor:pointer;
+  
+}
+
+.card {
+ display:flex;
+ background: #00BCD4;
+ border-radius: 2px;
+ display: inline-block;
+ border-bottom: 5px solid #0097A7;
+ height: 500px;
+ width: 300px;
+}
+
+h1{
+  color:white;
+  margin:10px;
+  text-align:center;
+  font-weight:300;
+  letter-spacing:4px;
+  font-size:3em;
+}
+
+h2{
+  color:white;
+  margin:10px;
+  text-align:center;
+  font-weight:300;
+  letter-spacing:4px;
+  font-size:3em;
+  display:none;
+}
+
+.val{
+  font-size:3.5em;
+  font-weight:700;
+  margin-top:5px;
+  color:white;
+}
+.krug{
+	border:1px solid white;
+	border-radius: 50%;
+	text-align:center;
+	height:230px;
+	width:230px;
+	margin:15px auto 25px auto;
+	font-size:32px;
+}
+.minisek{
+	
+}
+.krug p {
+	display:inline-block;
+	font-size:2em;
+	font-weight:700;
+	margin-top:45px;
+	color:white;
+}
+.braon{
+	border-color:#795548;
+}
+.break p {
+	display:inline-block;
+	font-size:2em;
+	font-weight:700;
+	margin-top:70px;
+	color:white;
+}
+
+.break {
+	margin:0 auto;
+	text-align:center;
+	display:none;
+	color:#795548;
+}
+
+.breakTime{
+	color:white;
+}
+.hidden{
+  display:none;
+}
+.up{
+	float:left;
+}
+
+.down{float:right;}
+.up,.down{
+  border:none;
+  display:inline-block;
+  font-weight:400;
+  font-size:4em;
+  color:#00838F;
+  background-color:white;
+  margin:0 auto;
+  width:50%;
+  padding:0;
+  cursor:pointer;
+  text-align:center;
+  transition: color 0.4s ease;
+  
+  outline-color:#0097A7; 
+   
+}
+
+.up:hover,.down:hover{
+  color:#CDDC39;
+}
+
+.up:active,.down:active{
+	outline-color:#0097A7;
+}
+
+i{
+  color:white;
+}
+.breakTime p{
+	display:inline-block;
+	font-size:18px;
+	margin-top:30px;
+	
+}
+
+.breakTime button{
+	width:40px;
+	height:40px;
+	margin-left:20px;
+	margin-top:30px;
+	border:none;
+	background-color:white;
+	font-size:2em;
+}
+
+.breakTime{
+	width:95%;
+	padding-left:20px;
+	
+}
+
+.controls{
+  maring:0 auto;
+   background-color:white;
+}
+
+/*GOOGLE IKONICE*/
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+  
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-60 { font-size: 60px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+i{
+  color:white;
+  transition: color 0.6s ease;
+}
+
+i:hover{
+  color:#CDDC39;
+}

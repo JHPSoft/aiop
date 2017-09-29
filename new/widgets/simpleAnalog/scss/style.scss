@@ -1,0 +1,83 @@
+$radius: 80px;
+
+body {
+  background-color: #aaaaa2;
+}
+
+.clock {
+  background-color: #eee;
+  width: $radius * 2;
+  height: $radius * 2;
+  margin: 2% auto;
+  border-radius: 50%;
+  border: 4px solid black;
+  position: relative;
+}
+
+.hour-hand, .minute-hand, .second-hand {
+  background-color: black;
+  position: absolute;
+  bottom: $radius;
+  border-radius: 2px;
+}
+
+@mixin hand($width, $length) {
+  height: $length;
+  width: $width;
+  left: $radius - $width / 2;
+  -webkit-transform-origin: 50% $length;
+}
+
+$h-hand-width: 4px;
+$h-hand-length: $radius - 20px;
+.hour-hand {
+  @include hand($h-hand-width, $h-hand-length);
+}
+
+$m-hand-width: 4px;
+$m-hand-length: $radius - 12px;
+.minute-hand {
+  @include hand($m-hand-width, $m-hand-length);
+}
+
+$s-hand-width: 2px;
+$s-hand-length: $radius - 8px;
+.second-hand {
+  @include hand($s-hand-width, $s-hand-length);
+}
+
+$notch-width: 4px;
+$notch-margin: 4px;
+.notch {
+  width: $notch-width;
+  height: 12px;
+  background-color: black;
+  position: absolute;
+}
+
+.three, .six, .nine {
+  -webkit-transform-origin: 50% $radius;
+}
+
+.six, .twelve {
+  left: $radius - $notch-width / 2;
+}
+
+.three {
+  -webkit-transform: rotate(90deg);
+  left: $radius - $notch-width / 2 - $notch-margin;
+}
+
+.six {
+  -webkit-transform: rotate(180deg);
+  top: -$notch-margin;
+}
+
+.nine {
+  -webkit-transform: rotate(270deg);
+  left: $radius - $notch-width / 2 + $notch-margin;
+}
+
+.twelve {
+  top: $notch-margin;
+}

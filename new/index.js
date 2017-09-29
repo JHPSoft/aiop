@@ -1,84 +1,61 @@
-var state = 0;
-
-$( "#tutorial" ).click
-(
-	function()
-	{
-		switch(state)
-		{
-			case 0:
-				state++;
-				$('#alert_first').addClass('hidden');
-				$('#alert_second').removeClass('hidden');
-				$('#add').css('z-index', '7' );
-			break;
-
-			case 1:
-				state++;
-				$('#alert_second').addClass('hidden');
-				$('#alert_third').removeClass('hidden');
-				$('#add').css('z-index', '0' );
-				$('#move').css('z-index', '7' );
-			break;
-
-			case 2:
-				state++;/**/
-				$('#alert_third').addClass('hidden');
-				$('#alert_fourth').removeClass('hidden');
-				$('#move').css('z-index', '0' );
-				$('#save').css('z-index', '7' );
-			break;
-
-			default:
-			$('#graypanel').css('display', 'none' );
-			$('#tutorial').css('display', 'none' );
-			$('#save').css('z-index', '0' );
-			$('#menu').css('z-index', '5')
-			break;
-		}
-	}
-);
-
-
 
 function hidemenu()
 {
 	$('#menu').css('top','-110px');
-	$("#sidebar").css('left','67vw');
+	$("#sidebar").css({
+	  'left' : '75vw',
+	  'visibility' : 'visible'});
 }
 
 function showmenu()
 {
 	  $('#menu').css('top','0px');
-	  $("#sidebar").css('left','101vw');
+	  $("#sidebar").css({
+	    'left' :'101vw',
+	    'visibility' : 'hidden'});
+	  
 }
+
+$('#sheet').click(
+  function()
+  {
+    showmenu();
+  }
+);
+
+/*$("#menu button").click(
+  function(){
+      $(this).blur();
+  });*/
 
 $( "#add" ).click
 (function(){hidemenu();});
 
-$( "#move" ).click
-(function(){showmenu();});
-
-$( "#save" ).click
-(
-	function()
-	{
-	    
-	}
+$('.dropdown-menu a').click(
+  function()
+  {
+    //alert($(this).html());
+    $('#dropdown-category').text($(this).html());
+    //$('#dropdown-category').app
+    //$( "#dropdown-category" ).append( '<span class="caret"></span>' );
+  }
 );
 
-$( "#sidebar div" ).click
-(
-		function()
+$('#sidebar #contents-area').on('click', 'div',
+  	function()
 		{
-		  
-		  
+
+		  //alert( $(this).data("url"));
+
 		  var url = $(this).data("url");
 			var wid = $(this).data("width");
 			var hei = $(this).data("height");
+			var canresize = $(this).data("resizable");
       var doc_wid = $(window).width();
       var doc_hei = $(window).height();
-	   
+
+    console.log(url);
+
 
 			$('<iframe/>', {
 			  class : "widgets",
@@ -89,19 +66,30 @@ $( "#sidebar div" ).click
 			}).css({
 			    left :  (doc_wid - wid) / 2 + "px",
 			    top : (doc_hei - hei) / 2 + "px"
-			}).appendTo('#contents');
-	/*
-			$('<div/>', {
-			    class : "widgets",
-				text : url,
-				width : wid,
-				height : hei
-			}).css({
-			    left :  (doc_wid - wid) / 2 + "px",
-			    top : (doc_hei - hei) / 2 + "px"
-			}).appendTo('#contents');
-*/
+			}).data("resizable",canresize).appendTo('#sheet');
+
+
       showmenu();
 			
 		}
 );
+
+$("#save").mouseleave(
+  function()
+  {
+    if( $("#save i").hasClass("glyphicon-wrench") )
+    {
+      $("#menu").addClass("out");
+      $("#menu").removeClass("in");
+      $("#menu").css({"opacity" : "0"});
+      
+    }
+});
+
+$("#menu").mouseenter(
+  function()
+  {
+    $("#menu").addClass("in");
+    $("#menu").removeClass("out");
+    $("#menu").css({"opacity" : "1"});
+});

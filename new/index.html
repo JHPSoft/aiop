@@ -1,109 +1,84 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-
-
-  <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-
-
-
-
+  <script src="BootstrapMenu.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../style.css">
-
+	
+  
 </head>
 
-<body>
-<div id="graypanel"></div>
+<body oncontextmenu="return false;">
+
+<!--사이드바-->
+  <div id="sidebar">
+    <div id="menu-area">
+    	<h2 class="text-center">WIDGETS</h2>
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" id="dropdown-category" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">전체</button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">전체</a></li>
+              <li class="divider"></li>
+              <li><a href="#">유틸리티</a></li>
+              <li><a href="#">뉴스 및 날씨</a></li>
+              <li><a href="#">시간</a></li>
+              <li><a href="#">검색도구</a></li>
+              <li><a href="#">스포츠</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+          <input type="text" class="form-control" aria-label="..." id="search">
+        </div><!-- /input-group -->
+      </div><!-- 항상 보임-->
+    <div id="contents-area">
+      
+    </div>
+  </div>
+<!--사이드바 끝-->
+
+<!--메뉴 및 위젯-->
+  <div id="contents">
+    <div id="sheet">
+      
+    </div>
+  	<div id="menu">
+  			<div>
+  					<button id="add" type="button" class="btn btn-default btn-xl"  data-placement="bottom" title="위젯을 추가합니다"><i class="glyphicon glyphicon-plus"></i></button>
+  					<button id="save" type="button" class="btn btn-primary btn-xl"  data-placement="bottom" title="현재 페이지를 저장합니다"><i class="glyphicon glyphicon-save"></i></button>
+  			</div>
+  	</div>
+  	<div id="resizeHandler">
+  	  <div class="glyphicon glyphicon-remove" id="removeicon"></div>
+  	</div>
+  	<!--<div>
+  	  <image width="50%" height="50%" src="https://newevolutiondesigns.com/images/freebies/cat-wallpaper-16.jpg"></image>
+  	</div>-->
+  	<!--<div style="border:1px solid; width:100px; height:100px;" id="inserttarget"></div>-->
+  </div>
+<!--메뉴 및 위젯 끝-->
 
 
-<div id="tutorial" >
-	<image id="new_logo" class="center" src="https://dummyimage.com/256x64/7f7f7f/ffffff.jpg&text=logo">
-	<div id="alert_first" class="panel panel-warning center tuto_alert">
-	<div class="panel-heading">
-		<h2 class="panel-title">창을 최대화해주세요</h2>
-	</div>
-	<div class="panel-body">
-		<p>위젯의 크기는 창 크기에따라 </br>자동으로 변하지 않습니다.</p>
-	</div></div>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="index.js"></script>
+  <script src="edit.js"></script>
+  
+  
+  <!-- 쿠키 테스트-->
+  <script>
+//HttpSession session = request.getSession();
+</script>
+<!--쿠키 끝-->
 
-	<div id="alert_second" class="panel panel-info center tuto_alert hidden">
-	<div class="panel-heading">
-		<h2 class="panel-title">위젯 추가하기</h2>
-	</div>
-	<div class="panel-body">
-		<p>스토어에서 위젯을 고르고 </br>원하는 곳에 자유롭게 배치하세요.</p>
-	</div></div>
-
-
-	<div id="alert_third" class="panel panel-info center tuto_alert hidden">
-	<div class="panel-heading">
-		<h2 class="panel-title">위젯 편집</h2>
-	</div>
-	<div class="panel-body">
-		<p>배치한 위젯을 옮기거나 </br>크기 조절 혹은 삭제하세요.</p>
-	</div></div>
-
-
-	<div id="alert_fourth" class="panel panel-info center tuto_alert hidden">
-	<div class="panel-heading">
-		<h2 class="panel-title">페이지 저장</h2>
-	</div>
-	<div class="panel-body">
-		<p>현재 페이지를</br>컴퓨터에 저장합니다.</p>
-	</div></div>
-</div>
-
-
-
-
-<div id="sidebar">
-	<h2 class="text-center">사용가능한 위젯들</h2>
-	<div class="items" data-url="http://clocktab.com" data-width="200" data-height="150">
-		<image src="https://dummyimage.com/64x64/7f7f7f/ffffff.jpg">
-		<h3>Clocktab</h3>
-		<p>다양한 스타일의 시계가있음<br> 그리고 이건 줄바꿈 테스트</p>
-	</div>
-	<div class="items" data-url="http://blacktime-jhpsoft.github.io/WebApps/widgets/reactcalculator/index.html" data-width="330" data-height="500">
-		<image src="https://dummyimage.com/64x64/7f7f7f/ffffff.jpg">
-		<h3>ReactCalculator</h3>
-		<p>Calculator</p>
-	</div>
-	<div class="items" data-url="http://shrib.com" data-width="300" data-height="400">
-		<image src="https://dummyimage.com/64x64/7f7f7f/ffffff.jpg">
-		<h3>Shrib.com</h3>
-		<p>Notepad.</p>
-	</div>
-	<div class="items" data-url="http://blacktime-jhpsoft.github.io/WebApps/widgets/pastelclock/index.html" data-width="100" data-height="80">
-		<image src="https://dummyimage.com/64x64/7f7f7f/ffffff.jpg">
-		<h3>PastelClock</h3>
-		<p>PastelClock</p>
-	</div>
-</div>
-
-
-
-<div id="contents">
-	<div id="menu">
-			<div>
-					<button id="add" type="button" class="btn btn-default btn-xl"  data-placement="bottom" title="위젯을 추가합니다"><i class="glyphicon glyphicon-plus"></i></button>
-					<button id="move" type="button" class="btn btn-default btn-xl"  data-placement="bottom" title="크기 변경, 위치 조절합니다"><i class="glyphicon glyphicon-move"></i></button>
-					<button id="save" type="button" class="btn btn-primary btn-xl"  data-placement="bottom" title="이 페이지를 내 컴퓨터에 저장합니다"><i class="glyphicon glyphicon-save"></i></button>
-			</div>
-	</div>
-	
-	<div id="resizeHandler">
-	  
-	</div>
-</div>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
-<script src="index.js"></script>
-<script src="edit.js"></script>
-
+  
+  
+  <!--firebase scripts-->
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script src="firebase.js"></script>
+  <!--firebase scripts-->
 
 </body>
 </html>

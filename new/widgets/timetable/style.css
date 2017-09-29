@@ -1,0 +1,41 @@
+html, body, #container, .vertical
+{
+  height : 100%;
+  margin : 0px;
+}
+/*
+#container{
+  background-color : #ccc;
+}*/
+input {
+  width : 20px;
+  text-align : center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.inline{
+  display : inline;
+}
+
+#menu{
+  width: 100%;
+  height : 5vh;
+}
+.vertical{
+  float : left;
+  width: 20%;
+  display : block;
+
+}
+
+.shadow{
+  -moz-box-shadow:    inset 0px 0px 10vw 3vw #ffc6c6;
+  -webkit-box-shadow: inset 0px 0px 10vw 3vw #ffc6c6;
+  box-shadow:         inset 0px 0px 10vw 3vw #ffc6c6;
+}
