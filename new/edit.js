@@ -2,6 +2,7 @@ var clicked = 0;
 var highest = 5000;
 var lowest = 5000;
 
+var onEdit ;
 
 $( "#save" ).click
 (
@@ -32,9 +33,12 @@ $( "#save" ).click
 $("#contents").delegate("iframe.widgets", "mouseover",
   function (event)
   {
-    if(clicked == 0)
+    if(clicked == "0")
     {
-      $(this).addClass("onEdit");
+      //$(this).addClass("onEdit");
+      onEdit = '#' + $(this).attr('id');
+      //console.log(onEdit);
+      $("body").data("onEdit",onEdit);
       
       $("#resizeHandler").css({
         'width' : $(this).width(),
@@ -52,17 +56,18 @@ $("#contents").delegate("iframe.widgets", "mouseover",
 $("#contents").delegate("div#resizeHandler", "mouseleave",
   function (event)
   {
-    if(clicked == 0 && $('.bootstrapMenu').css('display') == 'none' )
+    if(clicked == "0" && $('.bootstrapMenu').css('display') == 'none' )
     {
-      $("#contents").find('.onEdit').removeClass("onEdit");
-      console.log( $('.bootstrapMenu').css('display'));
+      onEdit = '';
+      //$("#contents").find('.onEdit').removeClass("onEdit");
+      //console.log( $('.bootstrapMenu').css('display'));
       $("#resizeHandler").fadeOut(100);
     }
   }
 );
 
 
-$("#removeicon").click
+/*$("#removeicon").click
 (
   function()
   {
@@ -70,7 +75,7 @@ $("#removeicon").click
     $("#resizeHandler").fadeOut(100);
   }
 );
-
+*/
 
 $( function() {
   $("#resizeHandler").resizable({
@@ -87,7 +92,7 @@ $( function() {
     
     resize : function()
     {
-      $(".onEdit").css({
+      $(onEdit).css({
       'width' : $(this).width(),
       'height' : $(this).height()
       });
@@ -112,7 +117,7 @@ $( function() {
     
     drag : function()
     {
-      $(".onEdit").css({
+      $(onEdit).css({
       'left' : $(this).position().left,
       'top' : $(this).position().top
       });
@@ -133,24 +138,24 @@ var menu = new BootstrapMenu('#resizeHandler', {
   actions: [{
       name: '앞으로 가져오기',
       onClick: function() {
-        $(".onEdit").css('z-index', Number($(".onEdit").css("z-index")) + 1 );
-        if($(".onEdit").css( "z-index") > highest) highest = $(".onEdit").css( "z-index");
+        $(onEdit).css('z-index', Number($(onEdit).css("z-index")) + 1 );
+        if($(onEdit).css( "z-index") > highest) highest = $(onEdit).css( "z-index");
       }
     }, {
       name: '뒤로 보내기',
       onClick: function() {
-        $(".onEdit").css('z-index', Number($(".onEdit").css("z-index")) - 1 );
-        if($(".onEdit").css( "z-index") < lowest) lowest = $(".onEdit").css( "z-index");
+        $(onEdit).css('z-index', Number($(onEdit).css("z-index")) - 1 );
+        if($(onEdit).css( "z-index") < lowest) lowest = $(onEdit).css( "z-index");
       }
     }, {
       name: '맨 앞으로 가져오기',
       onClick: function() {
-        $(".onEdit").css( "z-index", highest++);
+        $(onEdit).css( "z-index", highest++);
       }
     }, {
       name: '맨 뒤로 보내기',
       onClick: function() {
-        $(".onEdit").css( "z-index", lowest--);
+        $(onEdit).css( "z-index", lowest--);
         
       }
   }]

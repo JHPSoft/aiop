@@ -2,26 +2,69 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
+  <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 <div id="container">
-  <div class="panel panel-default" id="menu">
-    <p class="inline"> 시작 시간 : </p>
-    <input type="number" class="inline" id="starttime" placeholder="시작시간" value="09" min="8" max="24">
-    <p class="inline"> ~ </p>
-    <p class="inline"> 종료 시간 </p>
-    <input type="number" class="inline" id="endtime" placeholder="종료시간" value="18" min="8" max="24">
-  </div>
   <div class="vertical panel panel-default" id="mon"></div>
   <div class="vertical panel panel-default" id="tue"></div>
   <div class="vertical panel panel-default" id="wed"></div>
   <div class="vertical panel panel-default" id="thu"></div>
   <div class="vertical panel panel-default" id="fri"></div>
+  <div id="add" class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#settime"></div>
+  <hr id="currentTime">
+  <div id="showtime" class="h3">11:30</div>
+  
+  <div class="modal fade bd-example-modal-sm" id="settime" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          <h5 class="modal-title" id="exampleModalLabel">수업 추가</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a role="tab" data-toggle="tab">월요일</a></li>
+            <li role="presentation"><a role="tab" data-toggle="tab">화요일</a></li>
+            <li role="presentation"><a role="tab" data-toggle="tab">수요일</a></li>
+            <li role="presentation"><a role="tab" data-toggle="tab">목요일</a></li>
+            <li role="presentation"><a role="tab" data-toggle="tab">금요일</a></li>
+          </ul>
+        </form>
+        <form class="form-inline">
+          <div class="form-group">
+            <br>
+            <label for="classname">강의명 :</label>
+            <input type="text" class="form-control " id="classname">
+          </div>
+          <div class="form-group">
+            <label for="classnum">강의실 :</label>
+            <input type="number" class="form-control " id="classnum" min="0">
+          </div>
+          <div class="form-group">
+            <label for="starttime">시작 시간(h) :</label>
+            <input type="number" class="form-control inputtimer" id="starttime" min="0" max="24">
+          </div>
+          <div class="form-group">
+            <label for="endtime" >종료 시간(h) :</label>
+            <input type="number" class="form-control inputtimer" id="endtime"   min="0" max="24">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="onok">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div><!-- container-->
 
 <!--  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">

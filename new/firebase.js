@@ -1,3 +1,4 @@
+
 var config = {
       apiKey: "AIzaSyAVVGvYuwh2KV298DXSmaNQ2Ohi2KrUvds",
       authDomain: "aiop-data.firebaseapp.com",
@@ -7,12 +8,109 @@ var config = {
       messagingSenderId: "905713835388"
     };
     firebase.initializeApp(config);
+
+firebase.auth().signInAnonymously().catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
     
-    //var mtitle = document.getElementById('title');
-    /*var dbRef = firebase.database().ref().child('text');
-    dbRef.on('value',snap => mtitle.innerText = snap.val());*/
-    //var dbRef = firebase.database().ref().child('text').once('value');
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user)
+  {
+    // User is signed in.
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    console.log(isAnonymous +" / " + uid);
     
+    var toaccess =  firebase.database().ref('user/' + uid);
+    //console.log(toaccess);
+    toaccess.once('value', function(snapshot){
+      //console.log(snapshot);
+    snapshot.forEach
+    (
+      function(child)
+      {
+        var widgetdata = snapshot.child(child.key).val();
+        //console.log(child.key);
+  		  var url = widgetdata.src;
+		    var wid = widgetdata.width;
+  			var hei = widgetdata.height;
+  			var canresize = widgetdata.resize;
+        var mleft = widgetdata.wleft;
+        var mtop = widgetdata.wtop;
+        var m_z = widgetdata.wz;
+
+  			$('<iframe/>', {
+  			  class : "widgets",
+  				frameborder : "0",
+  				src : url,
+  				width : wid,
+  				height : hei,
+  				id : child.key
+  			}).css({
+  			    left :  mleft,
+  			    top : mtop,
+  			    "z-index" : m_z
+  			}).data("resizable",canresize).appendTo('#sheet');
+      }
+    );
+  }
+);
+
+
+    $('#save').click(
+      function()
+      {
+    
+        var toaccess =  firebase.database().ref('user/' + uid);
+        
+        $('.widgets').each(
+          function()
+          {
+            var currentid = this.id;
+            toaccess.child(currentid).set(
+              {
+                  wleft :  $('#'+currentid).css("left"),
+                  wtop : $('#'+currentid).css("top"),
+                  width : $('#'+currentid).width(),
+                  height : $('#'+currentid).height(),
+                  src : $('#'+currentid).attr("src"),
+                  resize : $('#'+currentid).data("resizable"),
+                  wz : $('#'+currentid).css("z-index")
+              }
+            );
+          }
+        );
+      }
+    );
+
+    $("#removeicon").click
+    (
+      function()
+      {
+        var toremove =  firebase.database().ref('user/' + uid);
+        var onEdit = $('body').data('onEdit');
+        
+        toremove.child($(onEdit).attr('id')).remove();
+        
+        console.log($(onEdit).attr("id"));
+        console.log(onEdit);
+        $(onEdit).remove();
+        $("#resizeHandler").fadeOut(100);
+        
+      }
+    );
+    
+  } else {
+    // User is signed out.
+    // ...
+  }
+  // ...
+});
+
+
     
 firebase.database().ref().child('widgets').once('value').then(
   function(snapshot)
@@ -22,9 +120,7 @@ firebase.database().ref().child('widgets').once('value').then(
       function(child)
       {
         var sideitems = snapshot.child(child.key).val();
-        /*console.log(child.key);
-        
-        console.log(snapshot.child(child.key).val());*/
+
         var divs = $('<div/>', {
   	    class : "items"
   			}).attr({
@@ -61,33 +157,37 @@ $("#search").keypress(function(e) {
     {
       var categoryname = $('#dropdown-category').text();
       var token_category;
+      var tosearchall =  firebase.database().ref().child('widgets');
+      var firstquery;
+      
       
       switch(categoryname)
       {
         case '전체' :
-          token_category = 'all';
+          firstquery = tosearchall;
           break;
         case '유틸리티' :
-          token_category = 'util';
+          firstquery = tosearchall.orderByChild('category').equalTo('util').limitToFirst(10);
           break;
         case '뉴스 및 날씨' :
-          token_category = 'news';
+          firstquery = tosearchall.orderByChild('category').equalTo('news').limitToFirst(10);
           break;
         case '시간' :
-          token_category = 'clock';
+          firstquery = tosearchall.orderByChild('category').equalTo('clock').limitToFirst(10);
           break;
         case '검색도구' :
-          token_category = 'search';
+          firstquery = tosearchall.orderByChild('category').equalTo('search').limitToFirst(10);
           break;
         case '스포츠' :
-          token_category = 'sports';
+          firstquery = tosearchall.orderByChild('category').equalTo('sports').limitToFirst(10);
           break;
       }
       
       /*console.log();*/
 
       $('#contents-area').text("");
-      firebase.database().ref().child('widgets').orderByChild('category').equalTo(token_category).limitToFirst(10).once('value').then
+      //firebase.database().ref().child('widgets').orderByChild('category').equalTo(token_category).limitToFirst(10).once('value').then
+      firstquery.once('value').then
       (
         function(snapshot)
         {

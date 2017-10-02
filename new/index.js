@@ -54,10 +54,11 @@ $('#sidebar #contents-area').on('click', 'div',
       var doc_wid = $(window).width();
       var doc_hei = $(window).height();
 
-    console.log(url);
+    //console.log(url);
 
 
 			$('<iframe/>', {
+			  id : $(".widgets").length,
 			  class : "widgets",
 				frameborder : "0",
 				src : url,
