@@ -1,3 +1,5 @@
+ 
+
 
 var config = {
       apiKey: "AIzaSyAVVGvYuwh2KV298DXSmaNQ2Ohi2KrUvds",
@@ -41,7 +43,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         var mleft = widgetdata.wleft;
         var mtop = widgetdata.wtop;
         var m_z = widgetdata.wz;
-
+        
   			$('<iframe/>', {
   			  class : "widgets",
   				frameborder : "0",
@@ -56,54 +58,51 @@ firebase.auth().onAuthStateChanged(function(user) {
   			}).data("resizable",canresize).appendTo('#sheet');
       }
     );
+  });
+
+
+  $('#save').click(
+    function()
+    {
+  
+      var toaccess =  firebase.database().ref('user/' + uid);
+      
+      $('.widgets').each(
+        function()
+        {
+          var currentid = this.id;
+          toaccess.child(currentid).set(
+            {
+                wleft :  $('#'+currentid).css("left"),
+                wtop : $('#'+currentid).css("top"),
+                width : $('#'+currentid).width(),
+                height : $('#'+currentid).height(),
+                src : $('#'+currentid).attr("src"),
+                resize : $('#'+currentid).data("resizable"),
+                wz : $('#'+currentid).css("z-index")
+            }
+          );
+        }
+      );
+    }
+  );
+
+  $("#removeicon").click
+  (
+    function()
+    {
+      var toremove =  firebase.database().ref('user/' + uid);
+      var onEdit = $('body').data('onEdit');
+      
+      toremove.child($(onEdit).attr('id')).remove();
+      $(onEdit).remove();
+      $("#resizeHandler").fadeOut(100);
+    }
+  );
+    
   }
-);
-
-
-    $('#save').click(
-      function()
-      {
-    
-        var toaccess =  firebase.database().ref('user/' + uid);
-        
-        $('.widgets').each(
-          function()
-          {
-            var currentid = this.id;
-            toaccess.child(currentid).set(
-              {
-                  wleft :  $('#'+currentid).css("left"),
-                  wtop : $('#'+currentid).css("top"),
-                  width : $('#'+currentid).width(),
-                  height : $('#'+currentid).height(),
-                  src : $('#'+currentid).attr("src"),
-                  resize : $('#'+currentid).data("resizable"),
-                  wz : $('#'+currentid).css("z-index")
-              }
-            );
-          }
-        );
-      }
-    );
-
-    $("#removeicon").click
-    (
-      function()
-      {
-        var toremove =  firebase.database().ref('user/' + uid);
-        var onEdit = $('body').data('onEdit');
-        
-        toremove.child($(onEdit).attr('id')).remove();
-        
-        console.log($(onEdit).attr("id"));
-        console.log(onEdit);
-        $(onEdit).remove();
-        $("#resizeHandler").fadeOut(100);
-        
-      }
-    );
-    
-  } else {
+  else
+  {
     // User is signed out.
     // ...
   }
@@ -144,10 +143,14 @@ firebase.database().ref().child('widgets').once('value').then(
     		  text : sideitems.info
     		}).appendTo(divs);
     		
+    		var copy = $('<small/>', {
+    		  text : "[개발자 이름 및 일부 위젯에는 license링크 연결 예정]"
+    		}).appendTo(divs);
+    		
     		$(divs).appendTo('#contents-area');
         
       }
-    )
+    );
   }
 );
 

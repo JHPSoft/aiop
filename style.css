@@ -95,10 +95,25 @@ button, button:focus{
 #contents-area div:nth-child(odd){
 	background-color: #dcdcdc;
 }
+#contents-area small{
+  color: gray;
+}
 
+
+#backgroundimages{
+  position: absolute;
+  left: 0;
+  top : 0;
+  width: 100vw;
+  height : 100vh;
+    opacity: 0.4;
+    z-index : 0;
+}
 
 #contents #sheet {
     height : 100vh;
+    z-index : 1;
+
 }
 
 #menu {

@@ -14,8 +14,8 @@
 
 
 .colon{
-  background: linear-gradient(-90deg, #cacaca 10px, transparent 10px),
-              linear-gradient(-90deg, #cacaca 10px, transparent 10px);
+  background: linear-gradient(-90deg, transparent 10px, transparent 10px),
+              linear-gradient(-90deg, transparent 10px, transparent 10px);
   
  
   background-position: 0 40px, 0 65px;
@@ -27,12 +27,12 @@
 .digit{
   width:60px;
   
-  background-image: linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /*  Top  */
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Middle*/
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Bottom*/
+  background-image: linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /*  Top  */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Middle*/
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #cacaca 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #cacaca 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Topleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px);   /* Bottomleft */
   
   background-position: 0 0, 0 50px, 0 100px, 0 10px, 0 60px;
   background-repeat:no-repeat;
@@ -41,7 +41,7 @@
 
 .zero{
   background-image: linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /*  Top  */
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Middle*/
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Middle*/
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Bottom*/
           
                     linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
@@ -49,12 +49,12 @@
 }
 
 .one{
-  background-image: linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /*  Top  */
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Middle*/
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Bottom*/
+  background-image: linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /*  Top  */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Middle*/
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }
 
 .two{
@@ -62,8 +62,8 @@
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Middle*/
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
-                    linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #cacaca 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
+                    linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, transparent 50px);   /* Bottomleft */
 }
 
 .three{
@@ -71,17 +71,17 @@
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Middle*/
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }
 
 .foure{
-  background-image: linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /*  Top  */
+  background-image: linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /*  Top  */
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Middle*/
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Bottom*/
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Bottom*/
           
                     linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }
 
 .five{
@@ -89,28 +89,28 @@
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Middle*/
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #cacaca 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
+                    linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, transparent 50px),   /* Topleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }
 
 
 .six{
-  background-image: linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /*  Top  */
+  background-image: linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /*  Top  */
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Middle*/
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #cacaca 50px),   /* Topleft */
+                    linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, transparent 50px),   /* Topleft */
                     linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }
 
 
 .seven{
   background-image: linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /*  Top  */
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Middle*/
-                    linear-gradient(90deg, transparent 10px, #cacaca 10px, #cacaca 50px, transparent 50px),   /* Bottom*/
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Middle*/
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, transparent 50px),   /* Bottom*/
           
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }
 
 
@@ -129,5 +129,5 @@
                     linear-gradient(90deg, transparent 10px, #2ba200 10px, #2ba200 50px, transparent 50px),   /* Bottom*/
           
                     linear-gradient(90deg, #2ba200 10px, transparent 10px, transparent 50px, #2ba200 50px),   /* Topleft */
-                    linear-gradient(90deg, #cacaca 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
+                    linear-gradient(90deg, transparent 10px, transparent 10px, transparent 50px, #2ba200 50px);   /* Bottomleft */
 }

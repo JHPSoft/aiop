@@ -2,6 +2,9 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
+	
+
+  
   <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -11,7 +14,7 @@
   
 </head>
 
-<body oncontextmenu="return false;">
+<body oncontextmenu="return false;" onload="chkbg();">
 
 <!--사이드바-->
   <div id="sidebar">
@@ -41,45 +44,32 @@
 
 <!--메뉴 및 위젯-->
   <div id="contents">
+    <div id="backgroundimages">    </div>
     <div id="sheet">
       
     </div>
   	<div id="menu">
   			<div>
-  					<button id="add" type="button" class="btn btn-default btn-xl"  data-placement="bottom" title="위젯을 추가합니다"><i class="glyphicon glyphicon-plus"></i></button>
-  					<button id="save" type="button" class="btn btn-primary btn-xl"  data-placement="bottom" title="현재 페이지를 저장합니다"><i class="glyphicon glyphicon-save"></i></button>
+  					<button id="add" type="button" class="btn btn-default btn-xl"><i class="glyphicon glyphicon-plus"></i></button>
+  					<button id="save" type="button" class="btn btn-primary btn-xl"><i class="glyphicon glyphicon-save"></i></button>
   			</div>
   	</div>
   	<div id="resizeHandler">
   	  <div class="glyphicon glyphicon-remove" id="removeicon"></div>
   	</div>
-<!--  	<div>
-  	  <img width="50%" height="50%" src="https://newevolutiondesigns.com/images/freebies/cat-wallpaper-16.jpg">
-  	</div>-->
-  	<!--<div style="border:1px solid; width:100px; height:100px;" id="inserttarget"></div>-->
   </div>
 <!--메뉴 및 위젯 끝-->
+
 
 
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
   <script src="index.js"></script>
-  <script src="edit.js"></script>
-  
-  
-  <!-- 쿠키 테스트-->
-  <script>
-//HttpSession session = request.getSession();
-</script>
-<!--쿠키 끝-->
-
-  
   
   <!--firebase scripts-->
-  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-  <script src="firebase.js"></script>
-  
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+    <script src="firebase.js"></script>
   <!--firebase scripts-->
-
+  
 </body>
 </html>
