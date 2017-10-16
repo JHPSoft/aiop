@@ -15,11 +15,11 @@ function showside(){
 
 function hideside(){
 	  $("#sidebar").css({
-	    'left' :'101vw',
+	    'left' :'102vw',
 	    'visibility' : 'hidden'});
 }
 
-$('#sheet').click(
+$('#backgroundimages').click(
   function()
   {
     hideside();
@@ -206,9 +206,22 @@ $( function() {
   });
 });
   
+$(function()
+{
+  $('.widgets').draggable({
+    containment:"#sheet",
+    snap: true,
+    snapMode: "both"
+  });
+});
+
   
 $( function() {
   $( "#resizeHandler" ).draggable({
+    containment:"#sheet",
+    snap: true,
+    snapMode: "both",
+    
     start : function()
     {
       clicked = 1;

@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 
 
@@ -75,7 +75,8 @@ function search()
 	var Naver;
   var Google;
   Naver = "https://search.naver.com/search.naver?where=nexearch&query="+document.getElementById("txt").value + "&sm=top_hty&fbm=1&ie=utf8";
-  Google = "https://www.google.co.kr/search?q=" + document.getElementById("txt").value + "&ie=utf-8%2F&oe=utf-8%2F&hl=ko&btnG=Google+%B0%CB%BB%F6&gws_rd=ssl"
+  //Google = "https://www.google.co.kr/search?q=" + document.getElementById("txt").value + "&ie=utf-8%2F&oe=utf-8%2F&hl=ko&btnG=Google+%B0%CB%BB%F6&gws_rd=ssl"
+  Google = "https://www.google.co.kr/search?newwindow=1&hl=ko&btnG=검색&q="+document.getElementById("txt").value;
   //alert(document.getElementById("txt").value);
   if(strUser == "Google")
   	window.open(Google, '_blank');

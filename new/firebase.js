@@ -29,13 +29,18 @@ firebase.auth().onAuthStateChanged(function(user) {
     var toaccess =  firebase.database().ref('user/' + uid);
     //console.log(toaccess);
     toaccess.once('value', function(snapshot){
-      //console.log(snapshot);
+    //  console.log(snapshot.val());
+    
+    /*데이터가 있으면 바로 사용모드로*/
+    if(snapshot.val() !== null)
+      $("#save").trigger('click');
     snapshot.forEach
     (
       function(child)
       {
         var widgetdata = snapshot.child(child.key).val();
         //console.log(child.key);
+
   		  var url = widgetdata.src;
 		    var wid = widgetdata.width;
   			var hei = widgetdata.height;

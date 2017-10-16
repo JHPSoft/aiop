@@ -1,0 +1,74 @@
+title           보여지는 지역이름
+temp            온도(화씨)
+alt.temp        섭씨
+code            상태코드
+todayCode       오늘 상태코드
+units.temp      f-화씨 c-섭씨
+units.distance  mi-miles km-kilometers
+units.pressure  in-pounds per square inch / mb-per square millibars
+units.speed     mph-miles per hour / kph - kilometers per hour
+alt.unit        units.temp의 반대가 표시됨
+currently       현재상태 (Partly Cloudy)
+high            오늘 최고 온도
+alt.hight       최고 온도의 섭씨(화씨)버전
+low             최저 온도
+alt.low         최저 온도의 섭씨(화씨)버전
+text            오전 날씨
+wind.chill      바람 냉기
+wind.directi    on  바람 방향
+wind.speed      바람속도(units.speed 기준)
+humidity        습도
+heatindex       체감온도
+pressure        기압?
+sunrise         일출
+sunset          일몰
+
+              0	tornado
+              1	tropical storm
+              2	hurricane
+              3	severe thunderstorms
+              4	thunderstorms
+              5	mixed rain and snow
+              6	mixed rain and sleet
+              7	mixed snow and sleet
+              8	freezing drizzle
+              9	drizzle
+              10	freezing rain
+              11	showers
+              12	showers
+              13	snow flurries
+              14	light snow showers
+              15	blowing snow
+              16	snow
+              17	hail
+              18	sleet
+              19	dust
+              20	foggy
+              21	haze
+              22	smoky
+              23	blustery
+              24	windy
+              25	cold
+              26	cloudy
+              27	mostly cloudy (night)
+              28	mostly cloudy (day)
+              29	partly cloudy (night)
+              30	partly cloudy (day)
+              31	clear (night)
+              32	sunny
+              33	fair (night)
+              34	fair (day)
+              35	mixed rain and hail
+              36	hot
+              37	isolated thunderstorms
+              38	scattered thunderstorms
+              39	scattered thunderstorms
+              40	scattered showers
+              41	heavy snow
+              42	scattered snow showers
+              43	heavy snow
+              44	partly cloudy
+              45	thundershowers
+              46	snow showers
+              47	isolated thundershowers
+              3200	not available

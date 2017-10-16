@@ -1,0 +1,252 @@
+/*
+  Docs at http://http://simpleweatherjs.com
+
+  Look inspired by http://www.degreees.com/
+  Used for demo purposes.
+
+  Weather icon font from http://fonts.artill.de/collection/artill-weather-icons
+
+  DO NOT hotlink the assets/font included in this demo. If you wish to use the same font icon then download it to your local assets at the link above. If you use the links below odds are at some point they will be removed and your version will break.
+*/
+
+html,body
+{
+  width:100%;
+  height: 100%
+}
+body, div, h2,h3{
+  text-align : center;
+  padding : 0;
+  margin : 0;
+}
+
+body {
+  overflow : hidden;
+  font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+div
+{
+  background-color: rgba(127,127,127,0.4);
+}
+
+@font-face {
+    font-family: 'weather';
+    src: url('artill_clean_icons.otf');
+/*    src: url('artill_clean_icons-webfont.eot');
+    src: url('artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+         url('artill_clean_icons-webfont.woff') format('woff'),
+         url('artill_clean_icons-webfont.ttf') format('truetype'),
+         url('artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+#weather {
+  //width: 500px;
+  margin: 0px auto;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+.icon {
+  color: #000;
+  font-family: weather;
+
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.0;
+}
+.bigicon{
+    font-size: 150px;
+}
+.smallicon{
+    font-size: 100px;
+}
+
+
+#weather h2 {
+  color: #000;
+  font-size: 30vh;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#weather h3 {
+  //margin: 0 0 8px;
+  color: #000;
+  font-size: 15vh;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+#weather ul {
+  margin: 0;
+  padding: 0;
+}
+
+#weather li {
+  background: rgba(255,255,255,0);
+  //padding: 10px;
+  display: block;
+  border-radius: 5px;
+}
+
+#weather .currently {
+  margin: 0 20px;
+}
+
+button {
+  display: block;
+  margin: 15px auto;
+  width: 140px;
+  padding: 5px;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+}
+
+#js-geolocation
+{
+  position: absolute;
+  display : none;
+  width: 100%;
+  height: 100%;
+  left : 0;
+  top : 0;
+  background-color : gray;
+  opacity:0;
+  transition-timing-function:  ease;
+  transition-duration: .5s;
+}
+#js-geolocation:hover
+{
+  opacity: 0.8;
+  transition-timing-function:  ease;
+  transition-duration: .5s;
+}
+
+#notice
+{
+  display:table-cell;
+  vertical-align:middle;
+  text-align: center;
+}
+
+#divleft
+{
+  width:40%;
+  background-color : yellow;
+  display : inline-block;
+
+}
+
+#divright
+{
+  width:55%;
+  display : inline-block;
+  background-color : red;
+
+}
+
+
+      #container
+      {
+        width : 100%;
+        height: 100%;
+      }
+      #today_cond
+      {
+        width: 100%;
+        height: 100%;
+      }
+
+
+      .divided
+      {
+        display : inline-block;
+        width: 50%;
+        height:100%;
+      }
+      .divleft
+      {
+        margin-right : -4px;
+      }
+      .height33
+      {
+        height:45%;
+      }
+      .height50
+      {
+        height:50%;
+      }
+      .height66
+      {
+        height:55%;
+      }
+      .width100
+      {
+        width:100%;
+      }
+      .inlined
+      {
+        display:inline-block;
+      }
+      
+      span{
+        font-size : 30%;
+      }
