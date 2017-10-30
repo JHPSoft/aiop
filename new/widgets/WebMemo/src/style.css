@@ -9,7 +9,7 @@ body{
   width : calc(100% - 20px);
   height : calc(100% - 20px);
   padding: 0px;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.5);
+  //box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.5);
   
 }
 
